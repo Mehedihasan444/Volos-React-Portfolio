@@ -49,7 +49,7 @@ const PortfolioItem=({ item })=> {
               ))}
             </ul>
             <p style={{marginTop: "10px"}}>
-              <a className="button" href={item.liveurl} target="_blank" rel="noopener noreferrer">Check Project</a>
+              <a className="button" href={item?.liveurl} target="_blank" rel="noopener noreferrer">Check Project</a>
             </p>
           </div>
         </div>
