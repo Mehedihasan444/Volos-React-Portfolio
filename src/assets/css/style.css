@@ -561,11 +561,16 @@ h1.entry-title {
 
 .site-info {
   margin-top: 25px;
+ width: 390px;
+ text-align: justify;
 }
 
 .social-links {
   margin-top: 10vh;
   margin-bottom: -5px;
+display: flex;
+gap: 10px;
+
 }
 
 .social-links a {
@@ -591,21 +596,21 @@ h1.entry-title {
 }
 
 .service-holder {
-  padding: 36px;
+  padding: 20px;
   background-color: #362a2e;
   width: 47%;
-  margin-right: 6%;
-  margin-bottom: 6%;
+  margin-right: 3%;
+  margin-bottom: 3%;
 }
 
 .service-holder img {
   width: 80px;
-  margin-bottom: 30px;
+  /* margin-bottom: 10px; */
 }
 
 .service-title {
   font-size: 28px;
-  line-height: 42px;
+  /* line-height: 42px; */
   color: #f37b83;
   font-weight: 700;
 }

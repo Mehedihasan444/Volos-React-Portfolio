@@ -6,6 +6,7 @@ import signature from '../assets/images/signature.png';
 
 // Data
 import navData from '../data/navbar.json';
+import useData from '../Hook/useData';
 
 // --------------
 
@@ -16,6 +17,9 @@ type NavbarProps = {
 function Navbar({ isLanding }: NavbarProps) {
   const [navActive, setNavActive] = useState<boolean>(false);
   const [sectionNum, setSectionNum] = useState<number>(1);
+
+    // use hook to fatch dynamic data
+    const data = useData();
 
   /**
    * Hiding navigation on clicking a nav link (important in mobie view)
@@ -84,12 +88,26 @@ function Navbar({ isLanding }: NavbarProps) {
           </div>
 
           <div className="my-info-wrapper">
-            {navData.navInfo.map((info, i) => (
-              <div className="my-info" key={'nav-info-' + i}>
-                <p className="my-info-title">{info.title}</p>
-                <p className="my-info-content">{info.text}</p>
+           
+              <div className="my-info" >
+                <p className="my-info-title">NAME</p>
+                <p className="my-info-content">{data.user?.about.name}</p>
               </div>
-            ))}
+          
+              <div className="my-info" >
+                <p className="my-info-title">Role</p>
+                <p className="my-info-content">{data.user?.about.title}</p>
+              </div>
+          
+              <div className="my-info" >
+                <p className="my-info-title">EMAIL</p>
+                <p className="my-info-content">{data.user?.email}</p>
+              </div>
+              <div className="my-info" >
+                <p className="my-info-title">PHONE</p>
+                <p className="my-info-content">{data.user?.about?.phoneNumber}</p>
+              </div>
+          
             <img className="my-info-signature" src={signature} alt="" />
           </div>
 

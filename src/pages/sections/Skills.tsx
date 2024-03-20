@@ -23,7 +23,7 @@ function Skills() {
     new Array(data?.user?.skills.length).fill(0)
   );
 
-console.log((data?.user?.skills.length)/2)
+
   useEffect(() => {
     const circleProgressBarRefValue = circleProgressBarRef.current;
     if (!circleProgressBarRefValue) return; // Check if ref is null

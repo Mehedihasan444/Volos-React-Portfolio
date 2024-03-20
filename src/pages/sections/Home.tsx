@@ -22,9 +22,12 @@ function Home() {
 
           <div className="social-links">
             {data?.user?.social_handles?.map((link, i) => (
-              <a key={"social-link-" + i} href={link?.url}>
+              <span key={"social-link-" + i}>
+                   <a  href={link?.url}>
                 {link?.platform}
               </a>
+              </span>
+           
             ))}
           </div>
         </div>

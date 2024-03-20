@@ -1,18 +1,20 @@
 // Images
-import servImg1 from '../../assets/images/services/service1.png';
-import servImg2 from '../../assets/images/services/service2.png';
-import servImg3 from '../../assets/images/services/service3.png';
-import servImg4 from '../../assets/images/services/service4.png';
-import servImg5 from '../../assets/images/services/service4.png';
+// import servImg1 from '../../assets/images/services/service1.png';
+// import servImg2 from '../../assets/images/services/service2.png';
+// import servImg3 from '../../assets/images/services/service3.png';
+// import servImg4 from '../../assets/images/services/service4.png';
+// import servImg5 from '../../assets/images/services/service4.png';
 
 // Data
+import useData from '../../Hook/useData';
 import serviceData from '../../data/service.json';
 
 // -----------------------
 
 function Service() {
-  const images: string[] = [servImg1, servImg2, servImg3, servImg4, servImg5];
-
+  // const images: string[] = [servImg1, servImg2, servImg3, servImg4, servImg5];
+    // use hook to fatch dynamic data
+    const data = useData();
   return (
     <section id="service" className="section">
       <div className="section-wrapper block">
@@ -20,11 +22,12 @@ function Service() {
           <div className="row">
             <div className="one-half width-55">
               <div className="services-wrapper">
-                {serviceData.servicesBoxes.map((serv, i) => (
-                  <div key={'serv-' + i} className={serv.className!}>
-                    <img src={images[i]} alt={serv.imageAltText} />
-                    <h4 className="service-title">{serv.servTitle}</h4>
-                    <div className="service-text">{serv.servDesc}</div>
+                {data?.user?.services?.map((serv, i) => (
+                  <div key={'serv-' + i} className="service-holder " 
+                  >
+                    <img src={serv.image.url} alt={serv.imageAltText} />
+                    <h4 className="service-title">{serv.name}</h4>
+                    <div className="service-text">{serv.desc}</div>
                   </div>
                 ))}
               </div>

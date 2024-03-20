@@ -13,7 +13,7 @@ import "./portfolio.css";
 // Data
 
 import useData from "../../../Hook/useData";
-import PortfolioItem from "./items/PortfolioItem";
+// import PortfolioItem from "./items/PortfolioItem";
 
 // --------------
 
@@ -21,10 +21,8 @@ const Portfolio = () => {
   // Portfolio item to be shown (change rendered different components in item folder)
   const [portfolioItem, setPortfolioItem] = useState<number>(0);
   // Portfolio item to be shown as a popup
-  const [openPortfolio, setOpenPortfolio] = useState<number>(0);
 
   const [isSeeAll, setIsSeeAll] = useState<boolean>(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   // use hook to fatch dynamic data
   const data = useData();
@@ -91,7 +89,7 @@ const Portfolio = () => {
                       color: "white",
                     }}
                   >
-                    {isSeeAll ? "See Few" : "See All"}
+                    {isSeeAll ? "See Less" : "See More"}
                   </button>
                 </div>
 
