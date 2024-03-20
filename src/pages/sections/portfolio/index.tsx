@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import PortfolioItem from "./items/PortfolioItem";
 // Plugins
 import { motion, AnimatePresence } from "framer-motion";
 import "reactjs-popup/dist/index.css";
@@ -13,7 +14,6 @@ import "./portfolio.css";
 // Data
 
 import useData from "../../../Hook/useData";
-// import PortfolioItem from "./items/PortfolioItem";
 
 // --------------
 
